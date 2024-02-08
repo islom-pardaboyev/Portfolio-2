@@ -56,6 +56,20 @@ body{
     margin-right: 3.5rem;
 }
 
+.header.sticky{
+    background: #fff;
+    transition: .5s ease;
+    box-shadow: 0 5px 3px var(--shadow-box);
+}
+
+.header.sticky .navbar a{
+    color: var(--text-color);
+}
+
+.header.sticky .navbar a.active{
+    color: var(--main-color);
+}
+
 .navbar a.active::before{
     content: '';
     position: absolute;
@@ -66,10 +80,20 @@ body{
     background-color: var(--white-color);
 }
 
+.header.sticky .navbar a::before{
+    background: var(--main-color);
+    opacity: .7;
+}
+
 #darkMode-icon{
     font-size: 2.4rem;
     color: white;
     cursor: pointer;
+}
+
+.header.sticky #darkMode-icon{
+    color: var(--text-color);
+    opacity: .9;
 }
 
 section{
@@ -232,6 +256,7 @@ span{
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 4rem;
 }
 
 .about-img{
@@ -250,4 +275,9 @@ span{
 
 .about-content h3{
     font-size: 2rem;
+}
+
+.home-content p{
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
 }
