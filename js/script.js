@@ -2,6 +2,11 @@
 let menuIcon = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
 
+menuIcon.onclick = () => {
+  menuIcon.classList.toggle('bx-x');
+  navbar.classList.toggle('active');
+}
+
 
 /*========== scroll sections active link ==========*/
 let sections = document.querySelectorAll('section');
@@ -30,25 +35,15 @@ window.onscroll = () => {
 
     /*========== remove menu icon navbar when click navbar link (scroll) ==========*/
 
+    menuIcon.classList.remove("bx-x")
+    navbar.classList.remove("active")
+
 };
 
-
-/*========== swiper ==========*/
-var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    loop: true,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  });
-
 /*========== dark light mode ==========*/
+let darkModeIcon = document.querySelector("#darkMode-icon");
 
-
-/*========== scroll reveal ==========*/
+darkModeIcon.onclick = () => {
+  darkModeIcon.classList.toggle("bx-sun");
+  document.body.classList.toggle("dark-mode")
+}
